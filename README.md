@@ -4,7 +4,9 @@
 The original demo app was the Autoscale demo app on Ubuntu 16.04, located [here](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-bottle-autoscale).
 
 ### Description
-Simple self-contained Ubuntu autoscale example which includes a Python Bottle server to do work. The VM Scale Set scales up when average CPU across all VMs > 60%, scales down when avg CPU < 30%.
+Simple self-contained RHEL autoscale example which includes a Python Bottle server to do work. The VM Scale Set scales up when average CPU across all VMs > 60%, scales down when avg CPU < 30%.
+
+This app provisions a VM scale set using the latest RHEL 7.7 cloud-init enabled image using ARM, and deploys a simple web application to it. You can use the web application to increase the load on your VM scale set instances, which will in turn cause the scale set to automatically scale out more instances.
 
 - Deploy the scale set with an instance count of 1
 - After it is deployed look at the resource group public IP address resource (in portal or resources explorer). Get the IP or domain name.
