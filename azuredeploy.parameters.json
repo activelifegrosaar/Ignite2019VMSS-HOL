@@ -3,10 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vmSku": {
-      "value": "Standard_D2_v3"
+      "value": "Standard_DS1_v2"
     },
     "vmssName": {
-      "value": "myvmss112"
+      "value": "FILL ME IN"
     },
     "instanceCount": {
       "value": 1

@@ -4,7 +4,7 @@
   "parameters": {
     "vmSku": {
       "type": "string",
-      "defaultValue": "Standard_D2_v3",
+      "defaultValue": "Standard_DS1_v2",
       "metadata": {
         "description": "Size of VMs in the VM Scale Set."
       }
@@ -21,7 +21,7 @@
       "metadata": {
         "description": "String used as a base for naming resources (9 characters or less). A hash is prepended to this string for some resources, and resource-specific information is appended."
       },
-      "maxLength": 9
+      "maxLength": 20
     },
     "instanceCount": {
       "type": "int",
@@ -188,7 +188,7 @@
           "osProfile": {
             "computerNamePrefix": "[parameters('vmssName')]",
             "adminUsername": "[parameters('adminUsername')]",
-            "customData": "[base64(concat('#cloud-config\n\nruncmd:\n- workserver_path=/srv/workserver\n- mkdir $workserver_path\n- wget https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vmss-bottle-autoscale/workserver.py\n- cp workserver.py $workserver_path\n- yum -y update\n- yum -y install python3\n- pip3 install bottle\n- systemctl disable firewalld\n- systemctl stop firewalld\n- touch /etc/systemd/system/workserver.service\n- printf \"[Unit]\\nDescription=workServer Service\\nAfter=rc-local.service\\n\" >> /etc/systemd/system/workserver.service\n- printf \"[Service]\\nWorkingDirectory=%s\\n\" $workserver_path >> /etc/systemd/system/workserver.service\n- printf \"ExecStart=/usr/bin/python3 %s/workserver.py\\n\" $workserver_path >> /etc/systemd/system/workserver.service\n- printf \"ExecReload=/bin/kill -HUP $MAINPID\\nKillMode=process\\nRestart=on-failure\\n\" >> /etc/systemd/system/workserver.service\n- printf \"[Install]\\nWantedBy=multi-user.target\\nAlias=workserver.service\" >> /etc/systemd/system/workserver.service\n- chmod +x /etc/systemd/system/workserver.service\n- service workserver start'))]",
+            "customData": "[base64(concat('#cloud-config\n\nruncmd:\n- workserver_path=/srv/workserver\n- mkdir $workserver_path\n- wget https://raw.githubusercontent.com/asinn826/Ignite2019VMSS-HOL/master/workserver.py\n- cp workserver.py $workserver_path\n- yum -y install python3\n- pip3 install bottle\n- systemctl disable firewalld\n- systemctl stop firewalld\n- touch /etc/systemd/system/workserver.service\n- printf \"[Unit]\\nDescription=workServer Service\\nAfter=rc-local.service\\n\" >> /etc/systemd/system/workserver.service\n- printf \"[Service]\\nWorkingDirectory=%s\\n\" $workserver_path >> /etc/systemd/system/workserver.service\n- printf \"ExecStart=/usr/bin/python3 %s/workserver.py\\n\" $workserver_path >> /etc/systemd/system/workserver.service\n- printf \"ExecReload=/bin/kill -HUP $MAINPID\\nKillMode=process\\nRestart=on-failure\\n\" >> /etc/systemd/system/workserver.service\n- printf \"[Install]\\nWantedBy=multi-user.target\\nAlias=workserver.service\" >> /etc/systemd/system/workserver.service\n- chmod +x /etc/systemd/system/workserver.service\n- service workserver start'))]",
             "linuxConfiguration": {
               "disablePasswordAuthentication": "true",
               "ssh": {
