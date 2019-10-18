@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmSku": {
+      "value": "Standard_D2_v3"
+    },
+    "vmssName": {
+      "value": "myvmss11"
+    },
+    "instanceCount": {
+      "value": 5
+    },
+    "adminUsername": {
+      "value": "adminuser"
+    },
+    "adminSshKey": {
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHpKdOnmQbDw1IqbLO3SPs9wYosUQCzxy7qT4w/B9jq64rwdHi5TesGmFIBse8orKKcTdE0b7gmfo1eNm2KgOB3uKFnkzo+wvMQrpiHtdW6rjDxLO/MFFOotOf2G+T42Z2uOpBYeboWNgT4VjB/PsB2Oh9wgD2PqMJZez5bcGuLOX4Ga5d/xRa/WRoMoeCUgUFCfI4lqVjQiFXn3Rw1NF+/QH1IkjXlhyY5DEr/RM4RB0CQS6JQOto4jYnQ6LL5fYEc2zc/QxCSURmejokrbjY70r4ZNFuGE7YcoD+2enJCqt+fK7AEucFJy+ZlEXACAgiTJEZZ6cNUNmJWfVC4W6r"
+    }
+  }
+}
