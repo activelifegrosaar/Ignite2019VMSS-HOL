@@ -3,6 +3,12 @@
 ### This demo app was modifed from the Azure Quickstart templates
 The original demo app was the Autoscale demo app on Ubuntu 16.04, located [here](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-bottle-autoscale).
 
+Deploy with:
+```
+az group create --name <resource gorup name> --location <location>
+az group deployment create -g <resource group name> -n <deployment name> --template-file azuredeploy.json --parameters @azuredeploy.parameters.json
+```
+
 ### Description
 Simple self-contained RHEL autoscale example which includes a Python Bottle server to do work. The VM Scale Set scales up when average CPU across all VMs > 60%, scales down when avg CPU < 30%.
 
