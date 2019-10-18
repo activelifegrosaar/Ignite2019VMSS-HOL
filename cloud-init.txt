@@ -3,7 +3,7 @@
 runcmd:
 - workserver_path=/srv/workserver
 - mkdir $workserver_path
-- wget https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vmss-bottle-autoscale/workserver.py
+- wget https://raw.githubusercontent.com/asinn826/Ignite2019VMSS-HOL/master/workserver.py
 - cp workserver.py $workserver_path
 - yum -y update
 - yum -y install python3
