@@ -9,7 +9,7 @@ Fill in the parameters in azuredeploy.parameters.json with appropriate values.
 
 Deploy with:
 ```
-az group create --name <resource gorup name> --location <location>
+az group create --name <resource group name> --location <location>
 az group deployment create -g <resource group name> -n <deployment name> --template-file azuredeploy.json --parameters @azuredeploy.parameters.json
 ```
 
